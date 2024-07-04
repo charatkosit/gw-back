@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:18.18.0-alpine as build
+FROM node:18.20.2-alpine as build
 
 # Set working directory
 WORKDIR /usr/src/app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Run the application
-FROM node:18.18.0-alpine
+FROM node:18.20.2-alpine
 
 # Set working directory
 WORKDIR /usr/src/app
@@ -28,7 +28,7 @@ COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/package*.json ./
 
 # Expose the port the app runs on
-EXPOSE 5400
+EXPOSE 3000
 
 # Start the application
 CMD ["npm", "run", "start:prod"]
