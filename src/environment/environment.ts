@@ -1,12 +1,13 @@
 export const environment = {
-  DEBUG_MODE: false,
-  DATABASE_IP: "127.0.0.1",
-  DATABASE_PORT: 3308,
-  DATABASE_USERNAME: "charat",
-  DATABASE_PASSWORD: "Toyota88@",
-  DATABASE_DB_NAME: "gwback",
-  SYNCHRONIZE: true,
-  LINE_NOTIFY_TOKEN: "ZcuasZl67YahoAeTyAvQ7loyL9RU2twtbqqizkfIhp6"
+  // not used
+  // DEBUG_MODE: false,
+  // DATABASE_IP: "127.0.0.1",
+  // DATABASE_PORT: 3308,
+  // DATABASE_USERNAME: "charat",
+  // DATABASE_PASSWORD: "Toyota88@",
+  // DATABASE_DB_NAME: "gwback",
+  // SYNCHRONIZE: true,
+  // LINE_NOTIFY_TOKEN: "ZcuasZl67YahoAeTyAvQ7loyL9RU2twtbqqizkfIhp6"
     // production: false,
     // dbUrl: "127.0.0.1",
     // port: 3308,
