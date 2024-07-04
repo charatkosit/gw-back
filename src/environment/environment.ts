@@ -1,7 +1,7 @@
 export const environment = {
   DEBUG_MODE: false,
   DATABASE_IP: "127.0.0.1",
-  DATABASE_PORT: 3306,
+  DATABASE_PORT: 3308,
   DATABASE_USERNAME: "charat",
   DATABASE_PASSWORD: "Toyota88@",
   DATABASE_DB_NAME: "gwback",
