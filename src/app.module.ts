@@ -6,12 +6,27 @@ import { OrderModule } from './order/order.module';
 import { OrderDetailModule } from './order-detail/order-detail.module';
 import { CarModule } from './car/car.module';
 import { CustomerModule } from './customer/customer.module';
-import { typeOrmConfig } from './config/typeorm.config';
+
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+import { Customer } from './customer/entities/customer.entity';
+import { Order } from './order/entities/order.entity';
+import { OrderDetail } from './order-detail/entities/order-detail.entity';
+import { Car } from './car/entities/car.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(typeOrmConfig),
+    ConfigModule.forRoot(),   
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host:  process.env.DATABASE_IP,
+      port:  +process.env.DATABASE_PORT,
+      username: process.env.DATABASE_USERNAME,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_DB_NAME,
+      entities: [Customer, Order, OrderDetail, Car],
+      synchronize: process.env.DATABASE_SYNCHRONIZE === 'true',}),
+
     OrderModule, 
     OrderDetailModule, 
     CarModule, 
