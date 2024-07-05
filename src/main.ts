@@ -13,6 +13,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
+  console.log(`ip_db: ${process.env.DATABASE_IP}`)
+  console.log(`db_username: ${process.env.DATABASE_USERNAME}`)
   // app.enableCors({
   //   origin: ['http://172.41.62.164:3000', 'http://172.41.60.18:3000'],
   //   methods: ['GET', 'POST' ,'HEAD', 'PUT', 'PATCH','DELETE'],
